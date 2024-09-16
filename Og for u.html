@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+.wrapper {
+ 
+  width: 100%;
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.10);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper i:first-child {
+  left: -22px;
+}
+
+.wrapper i:last-child {
+  right: -22px;
+  
+}
+@media (max-width: 768px) { /* Adjust the max-width value as needed for your mobile breakpoint */ 
+    .wrapper i
+     { display: none; }
+}
+
+.wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((85% / 4) - 2rem); /* Adjust to fit the desired number of cards */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 0.875 rem; 
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.carousel .card {
+  scroll-snap-align: start;
+  justify-content: left;
+  align-items: left;
+  height: 310px;
+  width: 220px;
+  margin-right: 150px;
+  
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 8px;
+  ;
+} 
+
+
+
+.carousel .card .img {
+  background: #fff;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+
+.card .img img {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 30px 0 5px;
+}
+
+.carousel .card span {
+  color: #6A6D78;
+  font-size: 0.875rem;
+}
+@media (max-width: 768px) {
+        .container .flex.flex-col.md\:flex-row.items-center {
+            flex-direction: column;
+            text-align: left;
+        }
+    }
+
+   
+    @media (max-width: 1440px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(35% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+
+
+    @media (max-width: 992px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(45% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+    @media (max-width: 1100px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(45% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(50% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+    @media (max-width: 768px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(58% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(48% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.3rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @media (max-width: 670px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(65% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1 rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+    @media (max-width: 590px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(70% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1 rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(90% / 1.5); /* Adjust to fit the desired number of cards */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1 rem;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(80% / 1.5); /* Adjust to fit the desired number of cards */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1 rem;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+    }
+}
+
+
+        /* Custom Font - Poppins */
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+        /* Custom styles */
+        /* Add padding to container on small screens */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+          /* Custom styles */
+    /* Add padding to container on small screens */
+    @media (max-width: 640px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+     /* Adjust grid layout for small screens */
+        @media (max-width: 640px) {
+            .product .grid {
+                grid-template-columns: 1fr; /* One column for small screens */
+            }
+        }
+ /* Adjust container for horizontal scrolling */
+ .product-container {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+        /* Ensure product cards stay inline */
+        .product-card {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal; /* Reset to allow text wrapping */
+        }
+        /* Custom styles */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+   .typing-animation {
+            display: inline;
+            border-right: 2px solid;
+            animation: blink 0.7s infinite step-end;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #f5f5f5;
+            }
+        }       
+        /* Custom Font - Poppins */
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+
+   
+</head>
+
+<div class="font-poppins bg-white">
+
+
+    <body class="bg-gray-100">
+           <!-- Navigation Bar -->
+    <nav class="fixed w-full bg-white shadow-sm lg:px-20 py-4 text-black z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl text-green-700 font-bold">Organic4U</h1>
+            <div class="md:hidden">
+                <!-- Hamburger Menu for mobile screens -->
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <ul class="hidden md:flex space-x-4">
+                <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#product" class="hover:text-gray-300">Product</a></li>
+                <li><a href="#service" class="hover:text-gray-300">Service</a></li>
+                <li><a href="#about" class="hover:text-gray-300">About Us</a></li>
+                <li><a href="#blog" class="hover:text-gray-300">Blog</a></li>
+                <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-menu" class="focus:outline-none">
+                <i class="fas fa-times text-white text-2xl"></i>
+            </button>
+        </div>
+        <ul class="text-white text-center space-y-4 mt-4">
+            <li><a href="#home" class="block py-2 hover:bg-green-900">Home</a></li>
+            <li><a href="#product" class="block py-2 hover:bg-green-900">Product</a></li>
+            <li><a href="#service" class="block py-2 hover:bg-green-900">Service</a></li>
+            <li><a href="#about" class="block py-2 hover:bg-green-900">About Us</a></li>
+            <li><a href="#blog" class="block py-2 hover:bg-green-900">Blog</a></li>
+            <li><a href="#contact" class="block py-2 hover:bg-green-900">Contact</a></li>
+        </ul>
+    </div>
+
+
+
+<!-- Sections -->
+<section id="home" class="h-screen flex items-center relative" style="background-image: url('https://www.skh.com/wp-content/uploads/2020/01/iStock-1155240408-1-800x500.jpg'); background-size: cover; background-position: center; position: relative;">
+    <div class="container mx-auto px-4 md:px-8 relative">
+        <div class="md:text-center md:w-full">
+            <h2 class="text-4xl md:text-6xl font-medium text-white mb-2 md:mb-4 z-10 relative">The healthiest food</h2>
+    <h2 class="text-4xl md:text-6xl font-bold text-green-600 mb-2 md:mb-6 z-10 relative">
+        <span class="typing-animation md:text-6xl font-regular text-green-600 mb-2 md:mb-4 z-10 relative"></span>
+    </h2>
+            <h2 class="text-lg md:text-xl font-regular text-white mb-2 md:mb-4 z-10 relative">Taste freshness, support sustainability</h2>
+            <button class="bg-green-700 hover:bg-green-600 text-white font-regular mt-8 md:mt-12 py-2 px-4 rounded z-10 relative">Order now</button>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-black opacity-70"></div>
+</section>
+    
+
+
+
+    <!-- Product Section -->
+    
+    <section id="product" class="px-18 blog py-12 bg-gray-50 md:py-28">
+        <div class="container mx-auto items-center px-4 md:px-8 lg:px-16 xl:px-20">
+            <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Our Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <!-- Product Cards 1 -->
+                <div class="product-card relative rounded-lg overflow-hidden border-2 border-gray-200 bg-transparent text-center">
+                    <img src="https://www.hbf.com.au/-/media/images/hbf/articles/2022/main-images-1200-x-800/why-you-should-eat-the-rainbow-of-fruits-and-vegetables.jpg?la=en&hash=E3AEC03A6F46BFFCAF4F87B279B48A7D5C8EE5E9" alt="Vegetables&Fruits" class="w-full h-32 md:h-48 object-cover rounded-lg">
+                    <div class="p-4 md:p-6 opacity-0 hover:opacity-100 absolute top-0 left-0 w-full h-full flex justify-center items-center transition duration-300 bg-black bg-opacity-60">
+                        <p class="text-white font-bold text-lg">View Products</p>
+                    </div>
+                    <div class="p-4 md:p-6 bg-white">
+                        <h3 class="mb-4 md:text-xl text-gray-800  font-bold text-left">Vegetables&Fruits</h3>
+                        <p class="text-base text-gray-600 text-left py-2 leading-normal">Locally sourced, sustainably picked veggies—freshness guaranteed.</p> 
+                    </div>
+                </div>
+                          <!-- Product Cards 2 -->
+                                <div class="product-card relative rounded-lg overflow-hidden border-2 border-gray-200 bg-transparent text-center">
+                                    <img src="https://www.instacart.com/company/wp-content/uploads/2022/04/grains.jpg" alt="Grains" class="w-full h-32 md:h-48 object-cover rounded-lg">
+                                    <div class="p-4 md:p-6 opacity-0 hover:opacity-100 absolute top-0 left-0 w-full h-full flex justify-center items-center transition duration-300 bg-black bg-opacity-60">
+                                        <p class="text-white font-bold text-lg">View Products</p>
+                                    </div>
+                                    <div class="p-4 md:p-6 bg-white">
+                                        <h3 class="mb-4 md:text-xl text-gray-800 font-bold text-left">Grains</h3>
+                                        <p class="text-base text-gray-600 text-left py-2 leading-normal">Sourced from local farms, our grains are the essence of flavor and sustainability.</p>
+                                    </div>
+                                </div>
+                 <!-- Product Cards 3 -->
+                 <div class="product-card relative rounded-lg overflow-hidden  border-2 border-gray-200 bg-transparent text-center">
+                    <img src="https://images.theconversation.com/files/226208/original/file-20180705-73303-h72hcs.jpg?ixlib=rb-4.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" alt="Meat" class="w-full h-32 md:h-48 object-cover rounded-lg">
+                    <div class="p-4 md:p-6 opacity-0 hover:opacity-100 absolute top-0 left-0 w-full h-full flex justify-center items-center transition duration-300 bg-black bg-opacity-60">
+                        <p class="text-white font-bold text-lg">View Products</p>
+                    </div>
+                    <div class="p-4 md:p-6 bg-white">
+                        <h3 class="mb-4 md:text-xl text-gray-800 font-bold text-left">Meat</h3>
+                        <p class="text-base text-gray-600 text-left py-2 leading-normal">Locally raised, ethically sourced—taste and ethics in perfect harmony.</p>
+                    </div>
+                </div>
+                 <!-- Product Cards 4 -->
+                 <div class="product-card relative rounded-lg overflow-hidden  border-2 border-gray-200 bg-transparent text-center ">
+                    <img src="https://www.dairyprocessing.com/ext/resources/2022/07/19/dairy-organic-milk-dairy-farm-organic-dairy-products.jpg?height=667&t=1658243746&width=1080" alt="Dairy" class="w-full h-32 md:h-48 object-cover rounded-lg">
+                    <div class="p-4 md:p-6 opacity-0 hover:opacity-100 absolute top-0 left-0 w-full h-full flex justify-center items-center transition duration-300 bg-black bg-opacity-60">
+                        <p class="text-white font-bold text-lg">View Products</p>
+                    </div>
+                    <div class="p-4 md:p-6 bg-white">
+                        <h3 class="mb-4 md:text-xl text-gray-800 font-bold text-left">Dairy</h3>
+                        <p class="text-base text-gray-600 text-left py-2 leading-normal">Locally sourced excellence. Our dairy stands out for taste and ethics.</p>
+                    </div>
+                </div>
+                                                                         
+
+            </div>
+        </div>
+    </section>
+
+
+<!-- Our Service -->
+<section id="service" class="px-18 blog py-12 bg-gray-50 md:py-28">
+    <div class="container mx-auto items-center px-8 lg:px-16 xl:px-20">
+        <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Our Service</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Service Cards -->
+            <div class="bg-white rounded-lg p-6 flex flex-col items-left border-2 border-gray-200">
+                <i class="fas fa-plus-circle text-3xl mb-4"></i>
+                <h3 class="text-3xl font-medium text-green-900 mb-2">Create an order</h3>
+                <p class="text-base leading-relaxed text-gray-600 py-2">Select from our extensive catalogue of high-quality fruit and veggies. You can select as much as you desire; the only requirement is that your order is at least $50.</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 flex flex-col items-left border-2 border-gray-200">
+                <i class="fas fa-check-circle text-3xl mb-4"></i>
+                <h3 class="text-3xl font-medium text-green-900 mb-2">Place your order</h3>
+                <p class="text-base leading-relaxed text-gray-600 py-2">Once you are happy with your order, click on check out. We will start immediately to select the best quality for you.</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 flex flex-col items-left border-2 border-gray-200">
+                <i class="fas fa-truck text-3xl mb-4"></i>
+                <h3 class="text-3xl font-medium text-green-900 mb-2">Receive your order</h3>
+                <p class="text-base leading-relaxed text-gray-600 py-2">It will take approximately 2 to 3 days to deliver your fresh organic fruit and veggies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+ <!-- Best seller new -->
+<section class="px-18 blog py-12 bg-gray-50 md:py-28">
+    <div class="container mx-auto items-center px-2  xl:px-20">
+      <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Best Seller</h2>
+      <div>
+        <div class="wrapper">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <ul class="carousel" >
+            <li class="card border-2 border-gray-200">
+              <div class="img w-48 h-32">
+                <img src="https://localorganicdelivery.com.au/cdn/shop/products/OrganicLemons-LocalOrganicDelivery.jpg?v=1596350935" alt="img" draggable="false">
+              </div>
+              <h2 class="text-base text-gray-800 sm:text-lg md:text-xl font-bold mb-2 text-left">Lemons</h2>
+              <span>CERTIFIED ORGANIC</span>
+              <span>$4.90</span>
+            </li>
+            <li class="card border-2 border-gray-200">
+              <div class="img">
+                <img src="https://localorganicdelivery.com.au/cdn/shop/products/BokChoy-LocalOrganicDeliveryMelbourne_600x.jpg?v=1654057432" alt="img" draggable="false">
+              </div>
+              <h2 class="text-base text-gray-800 sm:text-lg md:text-xl font-bold mb-2 text-left">Bok Choy</h2>
+              <span>CERTIFIED ORGANIC</span>
+              <span>$6.90</span>
+            </li>
+            <li class="card border-2 border-gray-200">
+              <div class="img">
+                <img src="https://localorganicdelivery.com.au/cdn/shop/products/Banana-LocalOrganicDeliveryMelbourne_600x.jpg?v=1654058835" alt="img" draggable="false">
+              </div>
+              <h2 class="text-base text-gray-800 sm:text-lg md:text-xl font-bold mb-2 text-left">Bananas</h2>
+              <span>CERTIFIED ORGANIC</span>
+              <span>$6.70</span>
+            </li>
+            <li class="card border-2 border-gray-200">
+              <div class="img">
+                <img src="https://localorganicdelivery.com.au/cdn/shop/products/OrganicGarlic-LocalOrganicDelivery.jpg?v=1594297074" alt="img" draggable="false">
+              </div>
+              <h2 class="text-base text-gray-800  sm:text-lg md:text-xl font-bold mb-2 text-left">Garlic Bulb</h2>
+              <span>CERTIFIED ORGANIC</span>
+              <span>$6.50</span>
+            </li>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- About Us Section -->
+<section id="about" class="blog py-12 bg-white md:py-28 flex flex-col">
+    <div class="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 flex flex-col md:flex-row items-center">
+        <!-- First Section: Picture on Left (or Center for Mobile) -->
+        <div class="mb-8 md:mr-8 md:w-1/2">
+            <img src="https://cdn.mos.cms.futurecdn.net/yY8mi7JgYkdx6Lt3WWii8b.jpg" alt="About Us" class="rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        </div>
+        <!-- Second Section: Text on Right (or Below for Mobile) -->
+        <div class="md:w-1/2">
+            <h2 class="mb-10 text-2xl md:text-4xl font-bold  md:mb-12 text-gray-800  ">About Us</h2>
+            <p class=" text-base leading-relaxed text-gray-600">Good health starts from the inside out, and sustainable health is nothing short of the most significant accomplishment we can achieve. At Organic4U, we want to feed you, help you heal, create more time in your life, and make you happy. We strive to make organic food delivery convenient and inspiring because you deserve nothing less!</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Organic Food Delivery Reviews Section -->
+<section class="px-18 blog py-12 bg-gray-50 md:py-28">
+    <div class="container mx-auto items-center px-8 lg:px-16 xl:px-20">
+        <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Customer Testimonials</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class=" bg-white p-8 md:p-12 rounded-lg border-2 border-gray-200">
+                <p class="text-base leading-relaxed text-gray-600 mb-6">"The quality of organic produce delivered by Organic Fresh has been outstanding. Fresh and delicious fruits and vegetables every time!My family does love organic4U"</p>
+                <p class="text-gray-800 font-semibold text-lg">- Sarah J.</p>
+            </div>
+            <!-- Review 2 -->
+            <div class=" bg-white p-8 md:p-12 rounded-lg border-2 border-gray-200">
+                <p class="text-base leading-relaxed text-gray-600 mb-6">"I've been using Organic Fresh for my weekly grocery deliveries, and I am happy. The convenience of having organic groceries delivered is good."</p>
+                <p class="text-gray-800 font-semibold text-lg">- Michael R.</p>
+            </div>
+            <!-- Review 3 -->
+            <div class=" bg-white p-8 md:p-12 rounded-lg border-2 border-gray-200">
+                <p class="text-base leading-relaxed text-gray-600 mb-6">"Organic Fresh has made it easy for me to maintain a healthy lifestyle. The variety of organic products available and the service are impressive."</p>
+                <p class="text-gray-800 font-semibold text-lg">- Emily S.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Blog Section -->
+    <section id="blog" class="px-18 blog py-12 bg-gray-50 md:py-28">
+        <div class="container mx-auto items-center  lg:px-16 xl:px-20">
+            <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Our Blog</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Section 1: Large Blog Post -->
+            <div class="rounded-lg overflow-hidden border-2 border-gray-200 bg-white">
+                <img src="https://i.pinimg.com/564x/33/4f/76/334f76011901e33611f5f47e028c8be9.jpg" alt="Large Blog Post" class="w-full  h-96 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl text-gray-800 font-bold mb-2">Savory Salmon Sandwich: A Delicious Catch of Flavor</h2>
+                    <p class="text-base leading-relaxed text-gray-600 mb-6 mb-2">Indulge in our succulent salmon sandwich, a flavorful fusion of fresh salmon, crisp lettuce, ripe tomatoes, and zesty lemon aioli. Served on toasted artisan bread, it's a taste sensation you won't forget.</p>
+                    <p class="text-base leading-relaxed text-gray-600 mb-6 font-bold mb-2">Ingredients</p>
+                    <p class="text-base leading-relaxed text-gray-600 mb-2">-Artisan bread</p>
+                    <p class="text-base leading-relaxed text-gray-600 mb-2">-Lettuce</p>
+                    <p class="text-base leading-relaxed text-gray-600 mb-2">-Tomato slices</p>
+                    <p class="text-base leading-relaxed text-gray-600  mb-2">-Lemon aioli</p>
+                    <p class="text-base leading-relaxed text-gray-600  mb-4">-Seasoning blend</p>
+                    <a href="#" class="text-green-700 hover:text-black font-bold">Read More</a>
+                </div>
+            </div>
+            <!-- Section 2: Two Smaller Blog Posts -->
+            <div class="grid grid-cols-1 gap-4"> 
+                <!-- Blog Post 1 -->
+                <div class=" rounded-lg overflow-hidden border-2 border-gray-200 bg-white">
+                    <img src="https://i.pinimg.com/564x/29/47/07/294707b7a60cd1a0edb4b12330ab6565.jpg" alt="Small Blog Post 1" class="w-full object-cover h-48">
+                    <div class="p-6">
+                        <h2 class="text-xl text-gray-800  font-bold mb-2">Delicious Meatball Wrap</h2>
+                        <p class="text-base leading-relaxed text-gray-600  mb-4">Indulge in our delicious meatball wrap, packed with juicy meatballs, marinara sauce, melted cheese, and fresh greens.</p>
+                        <a href="#" class="pt-2 text-green-700 hover:text-black font-bold">Read More</a>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class=" rounded-lg overflow-hidden border-2 border-gray-200 bg-white">
+                    <img src="https://i.pinimg.com/736x/7f/72/6b/7f726b6677792199014cddf24e029a41.jpg" alt="Small Blog Post 2" class="w-full object-cover h-48">
+                    <div class="p-6">
+                        <h2 class="text-xl text-gray-800 font-bold mb-2">Chocolate Almond Indulgence</h2>
+                        <p class="text-base leading-relaxed text-gray-600  mb-4 ">Savor the perfect blend of chocolate sweetness and nutty goodness with our chocolate almond treat.</p>
+                        <a href="#" class="pt-2 text-green-700 hover:text-black font-bold">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <!-- contact Us Section -->
+   <section id="contact" class="px-18 blog py-12 bg-gray-50 md:py-28">
+    <div class="container mx-auto items-center px-8 lg:px-16 xl:px-20">
+        <h2 class="text-2xl md:text-4xl font-bold mb-12 md:mb-12 text-gray-800  md:px-0">Contact Us</h2>
+
+            <p class="text-base leading-normal text-gray-600">27 Evergreen Dr, Rich Forest, QLD 0000  </p>
+            <p class="text-base leading-normal text-gray-600">Phone: 09-879966585 </p>
+            <p class="text-base leading-normal text-gray-600">Email: organic4U@email.com </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-50 text-gray-800 py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Organic4U. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    
+        // Smooth scroll for anchor links
+        document.querySelectorAll('nav a, #mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    </body>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    
+        // Smooth scroll for anchor links
+        document.querySelectorAll('nav a, #mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<script>
+    // Toggle mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Close mobile menu
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('nav a, #mobile-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.getElementById("menu-toggle");
+        const closeMenu = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function() {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        closeMenu.addEventListener("click", function() {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+    let defaultTransform = 0;
+  function goNext() {
+      defaultTransform = defaultTransform - 380;
+      var slider = document.getElementById("slider");
+      if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+      slider.style.transform = "translateX(" + defaultTransform + "px)";
+  }
+  next.addEventListener("click", goNext);
+  function goPrev() {
+      var slider = document.getElementById("slider");
+      if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+      else defaultTransform = defaultTransform + 380;
+      slider.style.transform = "translateX(" + defaultTransform + "px)";
+  }
+  prev.addEventListener("click", goPrev)
+  
+</script>
+<script>
+    // JavaScript to toggle the mobile menu
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        menuToggle.addEventListener("click", function() {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        closeMenu.addEventListener("click", function() {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+</script>
+<script>const wrapper = document.querySelector(".wrapper");
+    const carousel = document.querySelector(".carousel");
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const carouselChildrens = [...carousel.children];
+    
+    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+    
+    // Get the number of cards that can fit in the carousel at once
+    let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+    
+    // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+    
+    // Insert copies of the first few cards to end of carousel for infinite scrolling
+    carouselChildrens.slice(0, cardPerView).forEach(card => {
+        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+    });
+    
+    // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+    
+    // Add event listeners for the arrow buttons to scroll the carousel left and right
+    arrowBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+        });
+    });
+    
+    const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        // Records the initial cursor and scroll position of the carousel
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+    }
+    
+    const dragging = (e) => {
+        if(!isDragging) return; // if isDragging is false return from here
+        // Updates the scroll position of the carousel based on the cursor movement
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    }
+    
+    const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+    }
+    
+    const infiniteScroll = () => {
+        // If the carousel is at the beginning, scroll to the end
+        if(carousel.scrollLeft === 0) {
+            carousel.classList.add("no-transition");
+            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+            carousel.classList.remove("no-transition");
+        }
+        // If the carousel is at the end, scroll to the beginning
+        else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+            carousel.classList.add("no-transition");
+            carousel.scrollLeft = carousel.offsetWidth;
+            carousel.classList.remove("no-transition");
+        }
+    
+        // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+        clearTimeout(timeoutId);
+        if(!wrapper.matches(":hover")) autoPlay();
+    }
+    
+    const autoPlay = () => {
+        if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+        // Autoplay the carousel after every 2500 ms
+        timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+    }
+    autoPlay();
+    
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("scroll", infiniteScroll);
+    wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);</script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const texts = ["for a better you!", "for a healthier life!", "for a stronger body!"];
+            let currentTextIndex = 0;
+            let charIndex = 0;
+            const typingSpeed = 100;
+            const backSpeed = 50;
+            const delayBetweenTexts = 2000;
+            const typingElement = document.querySelector('.typing-animation');
+
+            function typeText() {
+                if (charIndex < texts[currentTextIndex].length) {
+                    typingElement.textContent += texts[currentTextIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeText, typingSpeed);
+                } else {
+                    setTimeout(eraseText, delayBetweenTexts);
+                }
+            }
+
+            function eraseText() {
+                if (charIndex > 0) {
+                    typingElement.textContent = texts[currentTextIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(eraseText, backSpeed);
+                } else {
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    setTimeout(typeText, typingSpeed);
+                }
+            }
+
+            typeText();
+        });
+    </script>
+
+
+    
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
